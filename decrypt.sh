@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function main() {
     IFS='|' read -r -a PAIRS <<< "${PLUGIN_FILE_TO_PATH_MAPPING}"
@@ -19,4 +19,4 @@ if [ -z "${PLUGIN_FILE_TO_PATH_MAPPING}" ]; then
     exit 1
 fi
 
-main()
+main
