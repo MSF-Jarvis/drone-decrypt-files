@@ -7,7 +7,7 @@ function main() {
         if [ "${#ELEMENTS[@]}" -eq 2 ]; then
             SRC="${ELEMENTS[0]}"
             DEST="${ELEMENTS[1]}"
-            openssl enc -aes-256-cbc -d -in "${SRC}" -k "${PLUGIN_DECRYPT_KEY}" > "${DEST}"
+            openssl enc -aes-256-cbc -pbkdf2 -d -in "${SRC}" -k "${PLUGIN_DECRYPT_KEY}" > "${DEST}"
         else
             echo "PLUGIN_FILE_TO_PATH_MAPPING is incorrectly formatted!"
         fi
