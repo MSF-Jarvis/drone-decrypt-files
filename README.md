@@ -28,5 +28,5 @@ What does this do:
 This image is configured to use the `aes-256-cbc` cipher from `openssl` to decrypt files, so that's
 what you'll need to encrypt them with as well.
 
-Use `openssl enc -aes-256-cbc -pbkdf2 -salt -in secrets.txt -out secrets.txt.enc` to encrypt the secrets, add them
+Use `openssl enc -aes-256-cbc -md sha256 -pbkdf2 -salt -in secrets.txt -out secrets.txt.enc` to encrypt the secrets, add them
 to your repo then set `file_to_path_mapping` in this format: `encrypted_file_1:decrypted_file_1|encrypted_file_2:decrypted_file_2`.
